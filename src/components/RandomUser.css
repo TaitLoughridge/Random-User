@@ -1,0 +1,12 @@
+.user-card {
+    display: inline-block;
+    width: 150px;
+    margin: 3px;
+    border-radius: 5px;
+    border: 3px;
+    padding-top: 10px;
+    border-color: rgb(76, 104, 100);
+    cursor: pointer;
+    color: aliceblue;
+    background: rgb(128, 151, 148);
+};
