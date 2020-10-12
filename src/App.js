@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import RandomUser from './components/RandomUser';
+import 'bulma/css/bulma.css'
 import './App.css';
+import { Container } from 'bloomer/lib/layout/Container';
+import { Button } from 'bloomer/lib/elements/Button';
+import { HeroHeader } from 'bloomer/lib/layout/Hero/HeroHeader';
+import { CardContent } from 'bloomer/lib/components/Card/CardContent';
 
 class App extends Component {
   state = {
@@ -33,17 +38,22 @@ class App extends Component {
     const { userData } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
+        <Container isFluid>
+        <HeroHeader className="App-header is-dark">
           <h1>Random User</h1>
-        </header>
+        </HeroHeader>
+        
         {this.state.userData.length ? (
           <RandomUser userData={userData} />
         ) : (
           <p>No User Data Loaded!</p>
         )}
-        <button onClick={this.handleClick}>Load More Users</button>
+        
+        <Button className="button is-dark is-small" onClick={this.handleClick}>Load More Users</Button>
+        </Container>
       </div>
     );
   }
 }
+
 export default App;
